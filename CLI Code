@@ -1,0 +1,7 @@
+aws ec2 run-instances \
+    --image-id ami-0c7217cdde317cfec \
+    --instance-type t2.micro \
+    --key-name KEY-NAME-HERE \
+    --subnet-id subnet-xxxxxxxxxxxxxxxxx \
+    --security-group-ids sg-xxxxxxxxxxxxxxxxx \
+    --region us-east-1
