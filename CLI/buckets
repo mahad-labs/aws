@@ -1,0 +1,27 @@
+aws s3api create-bucket --bucket mahad-glacier-bucket-cli --region us-east-1
+
+aws s3api put-bucket-lifecycle-configuration --bucket mahad-glacier-bucket-cli --lifecycle-configuration '{
+  "Rules": [
+    {
+      "ID": "TransitionToGlacierRule",
+      "Status": "Enabled",
+      "Prefix": "",
+      "Transitions": [
+        {
+          "Days": 365,
+          "StorageClass": "GLACIER"
+        }
+      ]
+    }
+  ]
+}'
+
+
+
+
+
+aws s3api get-bucket-policy --bucket mahad-glacier-bucket-cli
+
+
+
+aws s3api get-bucket-lifecycle-configuration --bucket mahad-glacier-bucket-cli
