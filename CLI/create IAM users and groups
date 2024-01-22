@@ -8,9 +8,9 @@ aws iam create-user --user-name joker
 sleep 10
 
 
-aws iam create-login-profile --user-name batman --password LogMeIn10920189- --password-reset-required
-aws iam create-login-profile --user-name robin --password LogMeIn10920189- --password-reset-required
-aws iam create-login-profile --user-name joker --password LogMeIn10920189- --password-reset-required
+aws iam create-login-profile --user-name batman --password **************** --password-reset-required
+aws iam create-login-profile --user-name robin --password **************** --password-reset-required
+aws iam create-login-profile --user-name joker --password **************** --password-reset-required
 sleep 10
 
 
