@@ -1,0 +1,26 @@
+aws iam create-group --group-name Admins2
+sleep 10
+
+
+aws iam create-user --user-name batman
+aws iam create-user --user-name robin
+aws iam create-user --user-name joker
+sleep 10
+
+
+aws iam create-login-profile --user-name batman --password LogMeIn10920189- --password-reset-required
+aws iam create-login-profile --user-name robin --password LogMeIn10920189- --password-reset-required
+aws iam create-login-profile --user-name joker --password LogMeIn10920189- --password-reset-required
+sleep 10
+
+
+aws iam add-user-to-group --user-name batman --group-name Admins2
+aws iam add-user-to-group --user-name robin --group-name Admins2
+aws iam add-user-to-group --user-name joker --group-name Admins2
+sleep 10
+
+aws iam attach-group-policy --group-name Admins2 --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
+sleep 10
+
+
+aws iam get-group --group-name Admins2 --query 'Users[*].[UserName,CreateDate]' --output table
